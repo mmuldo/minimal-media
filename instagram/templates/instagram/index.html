@@ -1,7 +1,7 @@
 {% if feed %}
 {% for post in feed %}
-<ul>
-    <li><a href='https://instagram.com/p/{{ post.code }}'>{{post.caption.text}}</a></li>
-</ul>
+{% if "image_versions2" in post %}
+<img src="{{post.image_versions2.candidates.0.url}}">
+{% endif %}
 {% endfor %}
 {% endif %}

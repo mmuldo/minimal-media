@@ -1,5 +1,6 @@
 from InstagramAPI import InstagramAPI
 from operator import itemgetter
+import requests
 
 def getFeed(username, password):
     feed = []
@@ -15,5 +16,5 @@ def getFeed(username, password):
     feed = sorted(feed, key=itemgetter('taken_at'), reverse=True)
     return feed
 
-def getLinks(feed):
-    return ["https://instagram.com/p/" + post["code"] for post in feed]
+# def getPicLinks(feed):
+#     return [BeautifulSoup(urlopen('https://www.instagram.com/p/' + post["code"]).read(), 'html.parser').find("meta", property="og:image")["content"] for post in feed]
