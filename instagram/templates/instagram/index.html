@@ -1,7 +1,15 @@
 {% if feed %}
 {% for post in feed %}
-{% if "image_versions2" in post %}
-<img src="{{post.image_versions2.candidates.0.url}}">
-{% endif %}
+<div class="row">
+    {% if "carousel_media" in post %}
+    {% for pic in post.carousel_media %}
+    <div class="column">
+        <img src="{{pic.image_versions2.candidates.1.url}}"
+    </div>
+    {% endfor %}
+    {% elif "image_versions2" in post %}
+    <img src="{{post.image_versions2.candidates.1.url}}">
+    {% endif %}
+</div>
 {% endfor %}
 {% endif %}

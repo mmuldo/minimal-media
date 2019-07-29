@@ -13,4 +13,4 @@ def index(request):
     return render(request, 'instagram/index.html', context)
 
 def tcat(request):
-    return HttpResponse(requests.get('https://www.instagram.com/p/BLw_qaTDHrd/'))
+    return render(request, 'instagram/post1.html')

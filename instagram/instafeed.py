@@ -10,8 +10,7 @@ def getFeed(username, password):
 
     api.getSelfUsersFollowing()
     for user in api.LastJson["users"]:
-        api.getUserFeed(user["pk"])
-        feed += api.LastJson["items"]
+        feed += api.getTotalUserFeed(user["pk"])
 
     feed = sorted(feed, key=itemgetter('taken_at'), reverse=True)
     return feed
